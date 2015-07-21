@@ -16,6 +16,7 @@ import net.minecraft.util.*;
 import net.minecraft.world.World;
 import net.minecraftforge.common.util.ForgeDirection;
 import openmodularturrets.compatability.ModCompatibility;
+import openmodularturrets.compatability.TownyIntegration;
 import openmodularturrets.handler.ConfigHandler;
 import openmodularturrets.items.addons.*;
 import openmodularturrets.items.upgrades.*;
@@ -118,7 +119,10 @@ public class TurretHeadUtil {
                         if (!entity.getUniqueID().toString().equals(base.getOwner())
                                 && !isTrustedPlayer(entity.getUniqueID(),
                                 base) && !entity.capabilities.isCreativeMode) {
-                            target = target1;
+                            // Towny Integration
+                            if (!TownyIntegration.isTownyPresent() || !TownyIntegration.playerIsAllied(base.getOwnerName(), entity)) {
+                                target = target1;
+                            }
                         }
                     }
                 }
@@ -184,7 +188,10 @@ public class TurretHeadUtil {
                         if (!entity.getUniqueID().toString().equals(base.getOwner())
                                 && !isTrustedPlayer(entity.getUniqueID(),
                                 base) && !entity.capabilities.isCreativeMode) {
-                            target = target1;
+                            // Towny Integration
+                            if (!TownyIntegration.isTownyPresent() || !TownyIntegration.playerIsAllied(base.getOwnerName(), entity)) {
+                                target = target1;
+                            }
                         }
                     }
                 }
@@ -250,7 +257,10 @@ public class TurretHeadUtil {
                         if (!entity.getUniqueID().toString().equals(base.getOwner())
                                 && !isTrustedPlayer(entity.getUniqueID(),
                                 base) && !entity.capabilities.isCreativeMode) {
-                            target = target1;
+                            // Towny Integration
+                            if (!TownyIntegration.isTownyPresent() || !TownyIntegration.playerIsAllied(base.getOwnerName(), entity)) {
+                                target = target1;
+                            }
                         }
                     }
                 }
